@@ -10,4 +10,4 @@ def solution(lottos, win_nums):
         if i in win_nums:
             cnt += 1
             
-    return rank[zero cnt],rank[cnt]
+    return rank[zero + cnt],rank[cnt]
