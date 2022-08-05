@@ -1,4 +1,7 @@
 from collections import defaultdict #인자로 주어진 객체의 기본값을 딕셔너리의 초깃값으로 지정할 수 있음
+#id_list = 이용자 ID 담긴 문자열
+#report = 신고당한 이용자 ID가 담긴 
+#k = 정지 기준이 되는 신고 횟수
 
 def solution(id_list, report, k):
     answer=[]
@@ -19,7 +22,4 @@ def solution(id_list, report, k):
         answer.append(result)
     return answer
     
-#id_list = 이용자 ID 담긴 문자열
-#report = 신고당한 이용자 ID가 담긴 
-#k = 정지 기준이 되는 신고 횟수
 print(1)
