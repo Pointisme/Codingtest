@@ -1,18 +1,14 @@
-import heapq
+from heapq import *
 def solution(scoville, K):
-    answer = 0
-    #섞은 음식의 스코빌 지수 = 가장 맵지 않은 음식의 스코빌 지수 
-    # + (두 번째로 맵지 않은 음식의 스코빌 지수 * 2)
-    heapq.heapify(scoville)
-    while scoville[0]<k:
-        try:
-            mix=heapq.heappop(scoville)+heapq.heappop(scoville)*2
-            heapq.heappush(scoville,mix)
-        except IndexError:
-            return -1
-        answer+=1
+    cnt=0
+    heapify(scoville)
+    while scoville[0]<K and len(scoville)>1:
+        num1 = heappop(scoville)
+        num2 = heappop(scoville)
+        heappush(scoville,num1+num2*2)
+        cnt+=1
+    return cnt if scoville[0]>=K else -1
 
-    return answer
 ##########################################
 #시간복잡도 충족X
 
